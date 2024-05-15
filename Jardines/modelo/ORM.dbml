@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RegistroICBF" Class="ORMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Acudiente" Member="Acudiente">
+    <Type Name="Acudiente">
+      <Column Name="Identificacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Acudiente_Niño" Member="Niño" ThisKey="Identificacion" OtherKey="IdentificadorAcudiente" Type="Niño" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Asistencia" Member="Asistencia">
+    <Type Name="Asistencia">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentificacionNiño" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Niño_Asistencia" Member="Niño" ThisKey="IdentificacionNiño" OtherKey="NIUP" Type="Niño" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AvanceAcademico" Member="AvanceAcademico">
+    <Type Name="AvanceAcademico">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentificacionNiño" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AnioEscolar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nivel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Notas" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaEntregaNota" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Niño_AvanceAcademico" Member="Niño" ThisKey="IdentificacionNiño" OtherKey="NIUP" Type="Niño" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cumpleaños" Member="Cumpleaños">
+    <Type Name="Cumpleaños">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentificacionNiño" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaCumpleaños" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Niño_Cumpleaños" Member="Niño" ThisKey="IdentificacionNiño" OtherKey="NIUP" Type="Niño" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Jardin" Member="Jardin">
+    <Type Name="Jardin">
+      <Column Name="Identificador" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Jardin_Niño" Member="Niño" ThisKey="Identificador" OtherKey="IdentificadorJardin" Type="Niño" />
+      <Association Name="Jardin_ReporteJardinesNoAprobados" Member="ReporteJardinesNoAprobados" ThisKey="Identificador" OtherKey="IdentificadorJardin" Type="ReporteJardinesNoAprobados" />
+      <Association Name="Jardin_ReporteNiñosPorJardin" Member="ReporteNiñosPorJardin" ThisKey="Identificador" OtherKey="IdentificadorJardin" Type="ReporteNiñosPorJardin" />
+      <Association Name="Jardin_Usuario" Member="Usuario" ThisKey="Identificador" OtherKey="IdentificadorJardin" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MadreComunitaria" Member="MadreComunitaria">
+    <Type Name="MadreComunitaria">
+      <Column Name="Identificacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DireccionResidencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="MadreComunitaria_Niño" Member="Niño" ThisKey="Identificacion" OtherKey="IdentificadorMadre" Type="Niño" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Niño" Member="Niño">
+    <Type Name="Niño">
+      <Column Name="NIUP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TipoSangre" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CiudadNacimiento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdentificacionAcudiente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EPS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IdentificadorJardin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdentificadorAcudiente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdentificadorMadre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdentificadorUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Niño_Asistencia" Member="Asistencia" ThisKey="NIUP" OtherKey="IdentificacionNiño" Type="Asistencia" />
+      <Association Name="Niño_AvanceAcademico" Member="AvanceAcademico" ThisKey="NIUP" OtherKey="IdentificacionNiño" Type="AvanceAcademico" />
+      <Association Name="Niño_Cumpleaños" Member="Cumpleaños" ThisKey="NIUP" OtherKey="IdentificacionNiño" Type="Cumpleaños" />
+      <Association Name="Niño_ReporteInasistenciasEnfermedad" Member="ReporteInasistenciasEnfermedad" ThisKey="NIUP" OtherKey="IdentificacionNiño" Type="ReporteInasistenciasEnfermedad" />
+      <Association Name="Niño_ReporteSemanalAsistencia" Member="ReporteSemanalAsistencia" ThisKey="NIUP" OtherKey="IdentificacionNiño" Type="ReporteSemanalAsistencia" />
+      <Association Name="Acudiente_Niño" Member="Acudiente" ThisKey="IdentificadorAcudiente" OtherKey="Identificacion" Type="Acudiente" IsForeignKey="true" />
+      <Association Name="Jardin_Niño" Member="Jardin" ThisKey="IdentificadorJardin" OtherKey="Identificador" Type="Jardin" IsForeignKey="true" />
+      <Association Name="MadreComunitaria_Niño" Member="MadreComunitaria" ThisKey="IdentificadorMadre" OtherKey="Identificacion" Type="MadreComunitaria" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReporteInasistenciasEnfermedad" Member="ReporteInasistenciasEnfermedad">
+    <Type Name="ReporteInasistenciasEnfermedad">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentificacionNiño" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Reporte" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Niño_ReporteInasistenciasEnfermedad" Member="Niño" ThisKey="IdentificacionNiño" OtherKey="NIUP" Type="Niño" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReporteJardinesNoAprobados" Member="ReporteJardinesNoAprobados">
+    <Type Name="ReporteJardinesNoAprobados">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentificadorJardin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reporte" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Jardin_ReporteJardinesNoAprobados" Member="Jardin" ThisKey="IdentificadorJardin" OtherKey="Identificador" Type="Jardin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReporteNiñosPorJardin" Member="ReporteNiñosPorJardin">
+    <Type Name="ReporteNiñosPorJardin">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentificadorJardin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reporte" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Jardin_ReporteNiñosPorJardin" Member="Jardin" ThisKey="IdentificadorJardin" OtherKey="Identificador" Type="Jardin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReporteSemanalAsistencia" Member="ReporteSemanalAsistencia">
+    <Type Name="ReporteSemanalAsistencia">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentificacionNiño" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Reporte" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Niño_ReporteSemanalAsistencia" Member="Niño" ThisKey="IdentificacionNiño" OtherKey="NIUP" Type="Niño" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="Identificacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdentificadorJardin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Jardin_Usuario" Member="Jardin" ThisKey="IdentificadorJardin" OtherKey="Identificador" Type="Jardin" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

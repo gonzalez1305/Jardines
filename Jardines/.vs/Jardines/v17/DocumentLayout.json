@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C1B53E-1118-419A-9CA2-C07A2F630442}|Jardines.csproj|C:\\Users\\User\\Downloads\\Jardines\\Jardines\\jardinweb.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C1B53E-1118-419A-9CA2-C07A2F630442}|Jardines.csproj|solutionrelative:jardinweb.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C1B53E-1118-419A-9CA2-C07A2F630442}|Jardines.csproj|C:\\Users\\User\\Downloads\\Jardines\\Jardines\\jardinweb.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B8C1B53E-1118-419A-9CA2-C07A2F630442}|Jardines.csproj|solutionrelative:jardinweb.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C1B53E-1118-419A-9CA2-C07A2F630442}|Jardines.csproj|C:\\Users\\User\\Downloads\\Jardines\\Jardines\\modelo\\orm.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{B8C1B53E-1118-419A-9CA2-C07A2F630442}|Jardines.csproj|solutionrelative:modelo\\orm.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C1B53E-1118-419A-9CA2-C07A2F630442}|Jardines.csproj|c:\\users\\user\\downloads\\jardines\\jardines\\modelo\\jardindao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8C1B53E-1118-419A-9CA2-C07A2F630442}|Jardines.csproj|solutionrelative:modelo\\jardindao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 133,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JardinDao.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\modelo\\JardinDao.cs",
+              "RelativeDocumentMoniker": "modelo\\JardinDao.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\modelo\\JardinDao.cs",
+              "RelativeToolTip": "modelo\\JardinDao.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwA8AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T22:54:46.833Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ORM.dbml",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\modelo\\ORM.dbml",
+              "RelativeDocumentMoniker": "modelo\\ORM.dbml",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\modelo\\ORM.dbml",
+              "RelativeToolTip": "modelo\\ORM.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2024-05-15T00:43:40.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Jardinweb.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\Jardinweb.aspx.cs",
+              "RelativeDocumentMoniker": "Jardinweb.aspx.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\Jardinweb.aspx.cs",
+              "RelativeToolTip": "Jardinweb.aspx.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwC8AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T22:42:38.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Jardinweb.aspx",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\Jardinweb.aspx",
+              "RelativeDocumentMoniker": "Jardinweb.aspx",
+              "ToolTip": "C:\\Users\\User\\Downloads\\Jardines\\Jardines\\Jardinweb.aspx",
+              "RelativeToolTip": "Jardinweb.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-14T22:42:39.447Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
